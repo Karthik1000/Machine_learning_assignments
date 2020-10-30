@@ -58,3 +58,50 @@ Dataset results(obtained):
 			Thank you……..
 
 </body>
+
+## Machine learning Assignment - 2
+<body>
+<br>
+<b>Dataset:-</b>
+<br>
+We have chosen 1st 200 patterns form the dYacht Hydrodynamics Data Set for training.The remaing patterns are used for testing. 
+<br>
+Algorithm:-
+<br>
+1.All the points(i.e the feature sets) are stored as list of lists(which is ‘list’ in our code).<br>
+2.All the corresponding output values(residuary resistance per unit weight of displacement, adimensional) for each point is stored in another list at the corresponding indices.<br>
+3.Now 1 is augmented in the 0th index of every point(to make the dot product easy).<br>
+4.Shuffling of all the points is done so as to maintain the randomness of the dataset.<br>
+5.Now, a random weight vector is assumed with all the values in it as ‘0’(‘list6’ in our code).<br>
+6.Then the dot product of these two vectors(‘list’.’list6’) is done and all the outputs are stored in another list namely predicted vector(‘list7’ in our code).<br>
+7.Now the error is calculated as the difference of predicted value and original value, these errors are stored in another list (‘list8’ in our code).<br>
+8.The mean square of these errors is caluculated,which is the cost function and the weight list is updated.<br>
+9.Now these steps are repeated for ‘n’(10000 to 100000 in our case) until the optimum accuracy is achieved(i.e cost function is minimized).<br>
+<br>
+<b>Error :-</b><br>
+Training error – 28 to 55(due to both shuffling and nonshuffling and due to change in iterations)<br>
+Testing error – 31 to 50%(due to both shuffling and nonshuffling and due to change in iterations)<br>
+<br>
+
+<b>Dataset :-</b><br>
+We have stored the iris data set that belongs to Versicolor and Virginica classes,shuffled the data set and then used the 1st 70 patterns for training and remaining 30 patterns for testing.
+<br>
+<b>Algorithm :-</b>
+<br>
+1.We stored all the points(feature sets including the class label) in a list.<br>
+2.Then ‘1’ is augmented at the starting index of every point.<br>
+3.Now, in these points the class labels ‘Iris-versicolor’,’Iris-virginica’ are replaced with ‘1’ and ‘-1’ respectively and this entire dataset is stored in ‘list3’ in our code.<br>
+4.Now the dataset is shuffled and the 1st 70 are used for training(list4 in code) and remaining(‘list41’ in code).<br>
+5.Now a Weight vector is assumed with all the initial values as ‘0’.<br>
+6.Dot product between all the feature set and the weight list is done(list4[i][j]*list6[i]).<br>
+7.Now if the ith output is >= 0 it is assigned to class ‘1’ else to class ‘-1’ and stored in another list(‘list7’ in code).<br>
+8.Now the differnce of list7 and list5(i.e originalpredicted) is stored as error in another list(‘list8’ in the code)<br>
+9.The mean square of these errors is calculated(cost function) and the weight list is updated.<br>
+10.This Algo is repeated until optimal accuracy and minimum error is achieved.( up to 10000 iterations)<br>
+11.Then using the weight vector corresponding to minimum error is used to classify the test set and error on the test set is calculated.<br>
+<br>
+<b>Errors:-</b>
+
+Training error – 0 to 5(due to both shuffling and nonshuffling and due to change in iterations)<br>
+Testing error – 0 to 10%(due to both shuffling and nonshuffling and due to change in iterations)<br>
+</body>
